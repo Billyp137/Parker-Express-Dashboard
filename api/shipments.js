@@ -27,7 +27,7 @@ export default async function handler(req, res) {
     if (date_from) params.set('date_start', date_from)
     if (date_to) params.set('date_end', date_to)
 
-    const response = await fetch(`https://api.starshipit.com/api/orders/all?${params}`, {
+    const response = await fetch(`https://api.starshipit.com/api/orders?${params}`, {
       headers: {
         'StarShipIT-Api-Key': apiKey,
         'Ocp-Apim-Subscription-Key': process.env.STARSHIPIT_SUBSCRIPTION_KEY || '',
