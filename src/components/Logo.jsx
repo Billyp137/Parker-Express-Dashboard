@@ -4,21 +4,24 @@ export default function Logo({ size = 'md', className = '' }) {
   const textSize = size === 'sm' ? 'text-sm' : size === 'lg' ? 'text-xl' : 'text-base'
   return (
     <div className={`flex items-center gap-2.5 ${className}`}>
-      <svg width={px} height={px} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        {/* P shape - gold left vertical bar */}
-        <rect x="8" y="28" width="14" height="52" fill="#F5A623"/>
-        {/* P shape - gold middle horizontal bar */}
-        <rect x="8" y="42" width="38" height="14" fill="#F5A623"/>
-        {/* P shape - black top horizontal bar */}
-        <rect x="8" y="8" width="52" height="14" fill="#111111"/>
-        {/* P shape - black right bump (vertical right side of P bowl) */}
-        <rect x="46" y="8" width="14" height="48" fill="#111111"/>
-        {/* X shape - black main diagonal (bottom-left to upper area) */}
-        <polygon points="18,92 32,92 78,8 64,8" fill="#111111"/>
-        {/* X shape - black lower-right arm */}
-        <polygon points="64,92 78,92 58,62 44,62" fill="#111111"/>
-        {/* X shape - gold upper-right arm */}
-        <polygon points="78,8 92,8 72,38 58,38" fill="#F5A623"/>
+      <svg width={px} height={Math.round(px * 0.83)} viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        {/* ===== P LETTER ===== */}
+        {/* Gold: left vertical bar of P */}
+        <polygon points="5,20 20,20 20,95 5,95" fill="#F5A623"/>
+        {/* Gold: middle horizontal arm of P (bowl midpoint) */}
+        <polygon points="5,45 55,45 55,60 5,60" fill="#F5A623"/>
+        {/* Black: top horizontal bar of P (overlays gold, full width of P) */}
+        <polygon points="5,5 70,5 70,20 5,20" fill="#111111"/>
+        {/* Black: right side vertical of P bowl */}
+        <polygon points="55,5 70,5 70,60 55,60" fill="#111111"/>
+
+        {/* ===== X LETTER ===== */}
+        {/* Black: main left diagonal of X (bottom-left to top-right, thick) */}
+        <polygon points="25,95 42,95 90,5 73,5" fill="#111111"/>
+        {/* Black: lower-right arm of X */}
+        <polygon points="73,95 90,95 66,58 49,58" fill="#111111"/>
+        {/* Gold: upper-right arm of X */}
+        <polygon points="90,5 107,5 83,38 66,38" fill="#F5A623"/>
       </svg>
       <div className={`font-condensed font-bold tracking-wide leading-none ${textSize}`}>
         <span className="text-white">PARKER</span>
