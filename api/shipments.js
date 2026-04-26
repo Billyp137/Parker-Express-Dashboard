@@ -42,6 +42,7 @@ export default async function handler(req, res) {
     }
 
     const data = await response.json()
+            console.log('Starshipit raw response keys:', Object.keys(data), 'orders count:', data.orders?.length, 'total:', data.total_results)
 
     // Normalise Starshipit response to our format
     const shipments = (data.orders || []).map(o => ({
