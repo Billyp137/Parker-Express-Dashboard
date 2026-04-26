@@ -42,10 +42,10 @@ export default async function handler(req, res) {
     }
 
     const data = await response.json()
-            console.log('Starshipit raw response keys:', Object.keys(data), 'orders count:', data.orders?.length, 'total:', data.total_results)
+                    console.log('Starshipit data count:', data.data?.length, 'total_records:', data.total_records, 'first order keys:', data.data?.[0] ? Object.keys(data.data[0]) : 'none')
 
     // Normalise Starshipit response to our format
-    const shipments = (data.orders || []).map(o => ({
+    const shipments = (data.data || []).map(o => ({
       id: o.order_id,
       trackingNumber: o.tracking_number || o.order_number,
       reference: o.order_number,
@@ -59,7 +59,7 @@ export default async function handler(req, res) {
       dispatchDateRaw: o.shipment_date ? new Date(o.shipment_date) : null,
     }))
 
-    return res.status(200).json({ shipments, total: data.total_results || shipments.length })
+    return res.status(200).json({ shipments, total: data.total_records || shipments.length })
   } catch (err) {
     console.error('Handler error:', err)
     return res.status(500).json({ error: 'Internal server error' })
