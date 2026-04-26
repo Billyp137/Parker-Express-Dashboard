@@ -42,7 +42,7 @@ export default async function handler(req, res) {
     }
 
     const data = await response.json()
-                    console.log('Starshipit data count:', data.data?.length, 'total_records:', data.total_records, 'first order keys:', data.data?.[0] ? Object.keys(data.data[0]) : 'none')
+                            console.log('data.data type:', typeof data.data, 'isArray:', Array.isArray(data.data), 'preview:', JSON.stringify(data.data).substring(0, 300))
 
     // Normalise Starshipit response to our format
     const shipments = (data.data || []).map(o => ({
