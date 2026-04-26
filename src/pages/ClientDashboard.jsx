@@ -258,8 +258,8 @@ export default function ClientDashboard() {
                                                                                                             <YAxis tick={{ fill: '#555', fontSize: 10 }} axisLine={false} tickLine={false} width={24} allowDecimals={false} />
                                                                                                             <Tooltip contentStyle={{ background: '#1a1a1a', border: '1px solid #333', borderRadius: 8, fontSize: 12 }} cursor={{ fill: '#ffffff08' }} />
                                                                                                             <Bar dataKey="count" fill="#F5A623" radius={[3, 3, 0, 0]} name="Shipments" />
-                                                                                          </BarChart>BarChart>
-                                                                      </ResponsiveContainer>ResponsiveContainer>
+                                                                                          </BarChart>
+                                                                      </ResponsiveContainer>
                                                       </div>
                                         
                                           {/* Status donut */}
@@ -271,10 +271,10 @@ export default function ClientDashboard() {
                                                                                                               {statusBreakdown.map((entry) => (
                                                       <Cell key={entry.name} fill={STATUS_COLORS[entry.name] || '#555'} />
                                                     ))}
-                                                                                                              </Pie>Pie>
+                                                                                                              </Pie>
                                                                                                             <Tooltip contentStyle={{ background: '#1a1a1a', border: '1px solid #333', borderRadius: 8, fontSize: 12 }} />
-                                                                                          </PieChart>PieChart>
-                                                                      </ResponsiveContainer>ResponsiveContainer>
+                                                                                          </PieChart>
+                                                                      </ResponsiveContainer>
                                                                       <div className="flex flex-col gap-1.5 mt-2">
                                                                         {statusBreakdown.map(s => (
                                                   <div key={s.name} className="flex items-center justify-between text-xs">
