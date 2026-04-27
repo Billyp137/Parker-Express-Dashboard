@@ -1,4 +1,4 @@
-/ api/shipments.js — Vercel serverless function
+// api/shipments.js — Vercel serverless function
 // Proxies to Starshipit API keeping the API key server-side
 
 export default async function handler(req, res) {
